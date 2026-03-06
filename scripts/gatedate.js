@@ -4,4 +4,4 @@ document.getElementById("currentyear").textContent = year;
 
 // Get last modified date
 document.getElementById("lastModified").textContent =
-  "Last Modified: " + document.lastModified;lll
+  "Last Modified: " + document.lastModified;
