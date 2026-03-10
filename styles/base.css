@@ -130,3 +130,40 @@ footer {
 body {
   font-family: 'Roboto', sans-serif;
 }
+header {
+  background: #2c5675;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #333;
+  padding: 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  background: #2c5675;
+  border-radius: 4px;
+}
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+footer {
+  background: #2c5675;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20px;
+}
