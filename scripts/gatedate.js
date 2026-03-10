@@ -1,7 +1,7 @@
-// Get current year
 const year = new Date().getFullYear();
-document.getElementById("currentyear").textContent = year;
 
-// Get last modified date
+document.querySelector("footer p").innerHTML =
+`© ${year} Precious Fabiyi • Nigeria`;
+
 document.getElementById("lastModified").textContent =
-  "Last Modified: " + document.lastModified;
+"Last Modification: " + document.lastModified;
