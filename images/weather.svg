@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+
+<!-- Sun -->
+<circle cx="140" cy="60" r="30" fill="gold"/>
+<g stroke="orange" stroke-width="4">
+<line x1="140" y1="15" x2="140" y2="0"/>
+<line x1="140" y1="105" x2="140" y2="120"/>
+<line x1="95" y1="60" x2="80" y2="60"/>
+<line x1="185" y1="60" x2="200" y2="60"/>
+<line x1="110" y1="30" x2="95" y2="15"/>
+<line x1="170" y1="90" x2="185" y2="105"/>
+<line x1="110" y1="90" x2="95" y2="105"/>
+<line x1="170" y1="30" x2="185" y2="15"/>
+</g>
+
+<!-- Cloud -->
+<ellipse cx="80" cy="90" rx="40" ry="25" fill="lightgray"/>
+<ellipse cx="110" cy="90" rx="40" ry="25" fill="lightgray"/>
+<ellipse cx="95" cy="75" rx="35" ry="25" fill="lightgray"/>
+
+<!-- Rain -->
+<g fill="deepskyblue">
+<ellipse cx="70" cy="140" rx="5" ry="10"/>
+<ellipse cx="95" cy="150" rx="5" ry="10"/>
+<ellipse cx="120" cy="140" rx="5" ry="10"/>
+</g>
+
+</svg>

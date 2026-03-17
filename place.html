@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore Iceland</title>
+
+<meta name="description" content="Learn about Iceland including weather, population, culture, and geography in this responsive web page project.">
+<meta name="author" content="Precious Fabiyi">
+
+<link rel="stylesheet" href="styles/place.css">
+
+<script src="scripts/place.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Iceland</h1>
+</header>
+
+<main>
+
+<!-- HERO IMAGE -->
+<section class="hero">
+
+<picture>
+<source srcset="images/iceland-large.webp" media="(min-width: 768px)">
+<img src="images/iceland-small.webp" alt="Beautiful landscape of Iceland">
+</picture>
+
+</section>
+
+<!-- DATA SECTION -->
+<section class="data">
+
+<h2>Data</h2>
+
+<ul>
+<li><strong>Area:</strong> 103,000 sq km</li>
+<li><strong>Population:</strong> 372,000</li>
+<li><strong>Capital:</strong> Reykjavik</li>
+<li><strong>Languages:</strong> Icelandic</li>
+<li><strong>Currency:</strong> Icelandic Króna</li>
+
+</ul>
+
+</section>
+
+<!-- WEATHER SECTION -->
+<section class="weather">
+
+<h2>Weather</h2>
+
+<p>Temperature: <span id="temperature">8</span> °C</p>
+<p>Wind Speed: <span id="windSpeed">12</span> km/h</p>
+<p>Wind Chill: <span id="windChill"></span></p>
+
+<!-- Mobile Weather Icon -->
+<img src="images/weather.svg" alt="Weather icon" class="weather-icon">
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+© <span id="currentyear"></span> | Precious Fabiyi
+</p>
+
+<p id="lastModified"></p>
+
+</footer>
+
+</body>
+</html>
