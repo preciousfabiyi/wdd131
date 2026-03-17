@@ -1,9 +1,8 @@
 :root {
-  --primary-color: #003897;
-}
-
-header {
-  background-color: var(--primary-color);
+  --blue: #2c5675;
+  --dark: #333;
+  --light-bg: #f2f2f2;
+  --white: #ffffff;
 }
 
 body{
