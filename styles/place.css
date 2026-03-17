@@ -1,7 +1,9 @@
-:root{
---primary: #003897;
---secondary: #d72828;
---text: #333;
+:root {
+  --primary-color: #003897;
+}
+
+header {
+  background-color: var(--primary-color);
 }
 
 body{
