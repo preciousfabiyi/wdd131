@@ -103,3 +103,4 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Initial load
 displayTemples(temples);
+parseInt(t.dedicated)
