@@ -1,106 +1,128 @@
-const year = new Date().getFullYear();
-document.getElementById("currentyear").textContent = year;
-
-document.getElementById("lastModified").textContent =
-"Last Modified: " + document.lastModified;
-
-
-const menuBtn = document.getElementById("menuBtn");
-const navMenu = document.getElementById("navMenu");
-
-menuBtn.addEventListener("click", () => {
-navMenu.classList.toggle("open");
-});
-// Temple Array (added 3 extra temples)
+// ==============================
+// TEMPLE DATA (with images)
+// ==============================
 const temples = [
-    {
-        templeName: "Salt Lake Temple",
-        location: "Salt Lake City, Utah",
-        dedicated: "1893, April, 6",
-        area: 253000,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple.jpg"
-    },
-    {
-        templeName: "Laie Hawaii Temple",
-        location: "Laie, Hawaii",
-        dedicated: "1919, November, 27",
-        area: 42100,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple.jpg"
-    },
-    {
-        templeName: "Cardston Alberta Temple",
-        location: "Cardston, Alberta, Canada",
-        dedicated: "1923, August, 26",
-        area: 88962,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/cardston-alberta-temple.jpg"
-    },
-    {
-        templeName: "Accra Ghana Temple",
-        location: "Accra, Ghana",
-        dedicated: "2004, January, 11",
-        area: 17500,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple.jpg"
-    },
-    {
-        templeName: "Aba Nigeria Temple",
-        location: "Aba, Nigeria",
-        dedicated: "2005, August, 7",
-        area: 11500,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/aba-nigeria-temple.jpg"
-    },
-    {
-        templeName: "Rome Italy Temple",
-        location: "Rome, Italy",
-        dedicated: "2019, March, 10",
-        area: 41000,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple.jpg"
-    }
+  {
+    templeName: "Salt Lake Temple",
+    location: "Salt Lake City, Utah, USA",
+    dedicated: "1893, April, 6",
+    area: 253000,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple.jpg"
+  },
+  {
+    templeName: "Laie Hawaii Temple",
+    location: "Laie, Hawaii, USA",
+    dedicated: "1919, November, 27",
+    area: 42100,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple.jpg"
+  },
+  {
+    templeName: "Cardston Alberta Temple",
+    location: "Cardston, Alberta, Canada",
+    dedicated: "1923, August, 26",
+    area: 88962,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/cardston-alberta-temple.jpg"
+  },
+  {
+    templeName: "Accra Ghana Temple",
+    location: "Accra, Ghana",
+    dedicated: "2004, January, 11",
+    area: 17500,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple.jpg"
+  },
+  {
+    templeName: "Aba Nigeria Temple",
+    location: "Aba, Nigeria",
+    dedicated: "2005, August, 7",
+    area: 11500,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/aba-nigeria-temple.jpg"
+  },
+  {
+    templeName: "Rome Italy Temple",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 10",
+    area: 41000,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple.jpg"
+  },
+  {
+    templeName: "Paris France Temple",
+    location: "Paris, France",
+    dedicated: "2017, May, 21",
+    area: 44000,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple.jpg"
+  }
 ];
 
-// Display temples
+// ==============================
+// DISPLAY FUNCTION
+// ==============================
 function displayTemples(templeList) {
-    const container = document.getElementById("temple-container");
-    container.innerHTML = "";
+  const container = document.getElementById("temple-container");
+  container.innerHTML = "";
 
-    templeList.forEach(temple => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+  templeList.forEach(temple => {
+    const card = document.createElement("section");
+    card.classList.add("card");
 
-        card.innerHTML = `
-            <h2>${temple.templeName}</h2>
-            <p><strong>Location:</strong> ${temple.location}</p>
-            <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-            <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-        `;
+    card.innerHTML = `
+      <h2>${temple.templeName}</h2>
+      <p><strong>Location:</strong> ${temple.location}</p>
+      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+      <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+      <img src="${temple.imageUrl}" 
+           alt="${temple.templeName}" 
+           loading="lazy">
+    `;
 
-        container.appendChild(card);
-    });
+    container.appendChild(card);
+  });
 }
 
-// Filters
-document.getElementById("home").addEventListener("click", () => displayTemples(temples));
+// ==============================
+// FILTER FUNCTIONS
+// ==============================
 
-document.getElementById("old").addEventListener("click", () => {
-    displayTemples(temples.filter(t => parseInt(t.dedicated) < 1900));
+// HOME (all temples)
+document.getElementById("home").addEventListener("click", e => {
+  e.preventDefault();
+  displayTemples(temples);
 });
 
-document.getElementById("new").addEventListener("click", () => {
-    displayTemples(temples.filter(t => parseInt(t.dedicated) > 2000));
+// OLD (< 1900)
+document.getElementById("old").addEventListener("click", e => {
+  e.preventDefault();
+  const filtered = temples.filter(t => parseInt(t.dedicated) < 1900);
+  displayTemples(filtered);
 });
 
-document.getElementById("large").addEventListener("click", () => {
-    displayTemples(temples.filter(t => t.area > 90000));
+// NEW (> 2000)
+document.getElementById("new").addEventListener("click", e => {
+  e.preventDefault();
+  const filtered = temples.filter(t => parseInt(t.dedicated) > 2000);
+  displayTemples(filtered);
 });
 
-document.getElementById("small").addEventListener("click", () => {
-    displayTemples(temples.filter(t => t.area < 10000));
+// LARGE (> 90,000 sq ft)
+document.getElementById("large").addEventListener("click", e => {
+  e.preventDefault();
+  const filtered = temples.filter(t => t.area > 90000);
+  displayTemples(filtered);
 });
 
-// Footer
+// SMALL (< 10,000 sq ft)
+document.getElementById("small").addEventListener("click", e => {
+  e.preventDefault();
+  const filtered = temples.filter(t => t.area < 10000);
+  displayTemples(filtered);
+});
+
+// ==============================
+// FOOTER (AUTO UPDATE)
+// ==============================
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
-// Initial load
+// ==============================
+// INITIAL LOAD
+// ==============================
 displayTemples(temples);
-parseInt(t.dedicated)
