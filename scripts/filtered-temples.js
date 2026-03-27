@@ -49,7 +49,7 @@ const temples = [
     location: "Paris, France",
     dedicated: "2017, May, 21",
     area: 44000,
-    imageUrl: "hhttps://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-2054.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-11048.jpg"
   },
   {
     templeName: "Tokyo Japan Temple",
@@ -59,11 +59,11 @@ const temples = [
     imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-27491.jpg"
   },
   {
-    templeName: "Barcelona Spain Temple",
-    location: "Barcelona, Spain",
-    dedicated: "2023, March, 5",
-    area: 60000,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/barcelona-spain-temple/barcelona-spainhttps://churchofjesuschristtemples.org/assets/img/temples/barcelona-spain-temple/barcelona-spain-temple-43015.jpg-temple-1234.jpghttps://churchofjesuschristtemples.org/assets/img/temples/barcelona-spain-temple/barcelona-spain-temple-43015.jpg"
+    templeName: "Las Vegas Nevada Temple",
+    location: "Las Vegas, Nevada, USA",
+    dedicated: "1989, December, 15",
+    area: 120000,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/las-vegas-nevada-temple/las-vegas-nevada-temple-51115.jpg"
   }
 ];
 
