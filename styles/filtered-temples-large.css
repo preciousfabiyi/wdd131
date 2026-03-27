@@ -100,9 +100,10 @@ figcaption {
 .shape-outside {
 	border-radius: 100px;
 	width: 35%;
+	height: 100px;
 	margin: 0 3em 0.5em 0;
 	float: left;
-	shape-outside: circle(100px at 50% 50%);
+	shape-outside: circle(50%);
 }
 
 .mbm-difference {
