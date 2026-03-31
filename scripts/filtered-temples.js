@@ -1,15 +1,5 @@
-const original = [...data];
-
-function filterTemples(criteria) {
-  return original.filter(temple => {
-    return Object.keys(criteria).every(key => {
-      return temple[key] === criteria[key];
-    });
-  });
-}
-
 // ==============================
-// TEMPLE DATA (with images)
+// TEMPLE DATA
 // ==============================
 const temples = [
   {
@@ -78,6 +68,13 @@ const temples = [
 ];
 
 // ==============================
+// HELPER FUNCTION
+// ==============================
+function getYear(temple) {
+  return parseInt(temple.dedicated.split(",")[0]);
+}
+
+// ==============================
 // DISPLAY FUNCTION
 // ==============================
 function displayTemples(templeList) {
@@ -85,65 +82,53 @@ function displayTemples(templeList) {
   container.innerHTML = "";
 
   templeList.forEach(temple => {
-    const div = document.createElement("div");
-    div.textContent = temple.templeName;
-    container.appendChild(div);
-    div.classList.add("card");
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-    div.innerHTML = `
-      <h2>${temple.templeName}</h2>
-      <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-      <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img src="${temple.imageUrl}" 
-           alt="${temple.templeName}" 
-           loading="lazy">
+    card.innerHTML = `
+      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <div class="card-content">
+        <h2>${temple.templeName}</h2>
+        <p><strong>Location:</strong> ${temple.location}</p>
+        <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+        <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+      </div>
     `;
 
-    container.appendChild(div);
+    container.appendChild(card);
   });
 }
 
 // ==============================
-// FILTER FUNCTIONS
+// FILTER EVENTS
 // ==============================
-
-// HOME (all temples)
-document.getElementById("home").addEventListener("click", e => {
+document.getElementById("home").onclick = e => {
   e.preventDefault();
   displayTemples(temples);
-});
+};
 
-// OLD (< 1900)
-document.getElementById("old").addEventListener("click", e => {
+document.getElementById("old").onclick = e => {
   e.preventDefault();
-  const filtered = temples.filter(t => parseInt(t.dedicated) < 1900);
-  displayTemples(filtered);
-});
+  displayTemples(temples.filter(t => getYear(t) < 1900));
+};
 
-// NEW (> 2000)
-document.getElementById("new").addEventListener("click", e => {
+document.getElementById("new").onclick = e => {
   e.preventDefault();
-  const filtered = temples.filter(t => parseInt(t.dedicated) > 2000);
-  displayTemples(filtered);
-});
+  displayTemples(temples.filter(t => getYear(t) > 2000));
+};
 
-// LARGE (> 90,000 sq ft)
-document.getElementById("large").addEventListener("click", e => {
+document.getElementById("large").onclick = e => {
   e.preventDefault();
-  const filtered = temples.filter(t => t.area > 90000);
-  displayTemples(filtered);
-});
+  displayTemples(temples.filter(t => t.area > 90000));
+};
 
-// SMALL (< 10,000 sq ft)
-document.getElementById("small").addEventListener("click", e => {
+document.getElementById("small").onclick = e => {
   e.preventDefault();
-  const filtered = temples.filter(t => t.area < 10000);
-  displayTemples(filtered);
-});
+  displayTemples(temples.filter(t => t.area < 20000)); // fixed
+};
 
 // ==============================
-// FOOTER (AUTO UPDATE)
+// FOOTER
 // ==============================
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
@@ -152,3 +137,4 @@ document.getElementById("lastModified").textContent = document.lastModified;
 // INITIAL LOAD
 // ==============================
 displayTemples(temples);
+

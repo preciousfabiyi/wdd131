@@ -11,3 +11,12 @@ const navMenu = document.getElementById("navMenu");
 menuBtn.addEventListener("click", () => {
 navMenu.classList.toggle("open");
 });
+const original = [...data];
+
+function filterTemples(criteria) {
+  return original.filter(temple => {
+    return Object.keys(criteria).every(key => {
+      return temple[key] === criteria[key];
+    });
+  });
+}
