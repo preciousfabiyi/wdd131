@@ -1,3 +1,13 @@
+const original = [...data];
+
+function filterTemples(criteria) {
+  return original.filter(temple => {
+    return Object.keys(criteria).every(key => {
+      return temple[key] === criteria[key];
+    });
+  });
+}
+
 // ==============================
 // TEMPLE DATA (with images)
 // ==============================
@@ -71,14 +81,16 @@ const temples = [
 // DISPLAY FUNCTION
 // ==============================
 function displayTemples(templeList) {
-  const container = document.getElementById("temple-container");
+  const container = document.getElementById("temples-container");
   container.innerHTML = "";
 
   templeList.forEach(temple => {
-    const card = document.createElement("section");
-    card.classList.add("card");
+    const div = document.createElement("div");
+    div.textContent = temple.templeName;
+    container.appendChild(div);
+    div.classList.add("card");
 
-    card.innerHTML = `
+    div.innerHTML = `
       <h2>${temple.templeName}</h2>
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
@@ -88,7 +100,7 @@ function displayTemples(templeList) {
            loading="lazy">
     `;
 
-    container.appendChild(card);
+    container.appendChild(div);
   });
 }
 
