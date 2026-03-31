@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f9f9;
+  margin: 0;
+}
+
+header {
+  background: #006994;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  max-width: 500px;
+  margin: auto;
+  padding: 1rem;
+}
+
+form {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.rating label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background: #28a745;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
