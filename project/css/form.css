@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background: #006994;
+  background: #585ae6;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -18,7 +18,7 @@ main {
 }
 
 form {
-  background: white;
+  background: rgb(188, 192, 238);
   padding: 1rem;
   border-radius: 10px;
 }
@@ -40,9 +40,20 @@ input, select, textarea {
 }
 
 input[type="submit"] {
-  background: #28a745;
+  background: #374177;
   color: white;
   border: none;
   margin-top: 15px;
   cursor: pointer;
+}
+
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background:#585ae6;
+  color: white;
+  font-size: 0.9rem;
 }
