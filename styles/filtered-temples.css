@@ -112,6 +112,16 @@ footer {
   font-size: 0.9rem;
 }
 
+/* REMOVE THIS ENTIRE BLOCK */
+.shape-outside {
+  border-radius: 100px;
+  width: 35%;
+  height: 100px;
+  margin: 0 3em 0.5em 0;
+  float: left;
+  shape-outside: circle(50%);
+}
+
 /* ====== RESPONSIVE ====== */
 @media (max-width: 600px) {
   header h1 {
