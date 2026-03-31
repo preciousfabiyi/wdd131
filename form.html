@@ -20,11 +20,14 @@
 <main>
 <form method="get" action="review.html">
 
-<!-- Product Name -->
-<label for="product">Product Name</label>
-<select id="product" name="product" required>
-  <option value="" disabled selected>Select a Product ...</option>
-</select>
+  <fieldset>
+    <legend>Product Information</legend>
+    <!-- Product Name -->
+    <label for="product">Product Name</label>
+    <select id="product" name="product" required>
+      <option value="" disabled selected>Select a Product ...</option>
+    </select>
+  </fieldset>
 
 <!-- Rating -->
 <label>Overall Rating</label>
@@ -40,14 +43,23 @@
 <label for="date">Date of Installation</label>
 <input type="date" id="date" name="date" required>
 
-<!-- Features -->
 <label>Useful Features</label>
-<label><input type="checkbox" name="features" value="Durable"> Durable</label>
-<label><input type="checkbox" name="features" value="Easy Use"> Easy Use</label>
-<label><input type="checkbox" name="features" value="Affordable"> Affordable</label>
+
+<input type="checkbox" id="feat1" name="features" value="Durable">
+<label for="feat1">Durable</label>
+
+<input type="checkbox" id="feat2" name="features" value="Easy Use">
+<label for="feat2">Easy Use</label>
+
+<input type="checkbox" id="feat3" name="features" value="Affordable">
+<label for="feat3">Affordable</label>
+
+<input type="checkbox" id="feat4" name="features" value="Energy Efficient">
+<label for="feat4">Energy Efficient</label>
+
 
 <!-- Review -->
-<label for="review">Written Review</label>
+<label for="review">Written Review(optional)</label>
 <textarea id="review" name="review"></textarea>
 
 <!-- Username -->
