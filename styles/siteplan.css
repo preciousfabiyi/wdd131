@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f9f9;
+  color: #333;
+}
+
+header {
+  background: #006994;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #006994;
+}
+
+.highlight {
+  color: #28a745;
+}
+
+.wireframe {
+  border: 2px solid #ccc;
+  padding: 10px;
+}
+
+.box {
+  border: 1px dashed #666;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.col {
+  flex: 1;
+}
