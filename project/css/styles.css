@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f9f9;
+}
+
+/* HEADER */
+header {
+  background: #006994;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 150px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 2s ease-in;
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* REVIEW CARDS */
+.review-card {
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-left: 5px solid #28a745;
+}
+/* FOOTER */
+footer {
+  background: #006994;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Footer links */
+footer a {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Sticky footer (optional upgrade) */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+/* DARK MODE */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+.dark header,
+.dark footer {
+  background: #1f1f1f;
+}
+
+.dark section {
+  background: #1e1e1e;
+}
+
+#themeToggle {
+  margin-top: 10px;
+  padding: 8px;
+  background: #28a745;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+#stars span {
+  font-size: 25px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#stars span.active {
+  opacity: 1;
+}
+.dropbtn {
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  background: #218838;
+}
+
+.dropdown-content {
+  border-radius: 8px;
+  overflow: hidden;
+}
+section {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+  }
+}
